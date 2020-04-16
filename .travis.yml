@@ -1,0 +1,16 @@
+language: java
+
+dist: trusty
+jdk:
+   - openjdk-13
+addons:
+        apt:
+                packages:
+                        - junit4
+script:
+       make
+branches:
+        only:
+                - master
+after_success:
+  - bash <(curl -s https://codecov.io/bash) 
